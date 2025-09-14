@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Master</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Typing Master</h1>
+        <div class="time-buttons">
+            <button class="time-btn" value="30" > 30 seconds</button>
+            <button class="time-btn" value="60"> 1 minute</button>
+            <button class="time-btn" value="120"> 2 minutes</button>
+        </div>
+
+        <div class="stats-container">
+            <p class=" stat-label">Time: <span id="time" class="stat-value">0</span> seconds</p>
+            <p class=" stat-label">Typing Speed: <span id="wpm" class="stat-value">0</span> WPM</p>
+            <p class=" stat-label">Accuracy: <span id="accuracy" class="stat-value">0</span>%</p>
+
+        </div>
+
+        <div class="typing-para text-container">
+            <p class="text-display"></p>
+        </div>
+
+        <textarea class="typing-input" id="user-input" placeholder="Start typing..."></textarea>
+
+        <form id="resultForm" action="/result" method="POST" style="display:none;">
+            <input type="hidden" name="wpm" id="wpmInput">
+            <input type="hidden" name="accuracy" id="accuracyInput">
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
