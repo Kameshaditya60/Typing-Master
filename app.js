@@ -29,6 +29,6 @@ app.post('/result', (req, res) => {
     res.render('result', { wpm, accuracy });
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
