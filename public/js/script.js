@@ -4,6 +4,7 @@ const timeElement = document.getElementById("time");
 const wpmElement = document.getElementById("wpm");
 const accuracyElement = document.getElementById("accuracy");
 const timeBtn = document.querySelectorAll(".time-btn");
+const textContainer = document.querySelector('.text-container');
 
 const resultForm = document.getElementById("resultForm");
 const wpmInput = document.getElementById("wpmInput");
@@ -119,7 +120,21 @@ console.log('Display Text ', typeof (displayText));
     if (input[i] === displayText[i])
       correctChars++;
   }
-
+// here i added auto scroll :
+    const currentChar = allChars[input.length];
+    if (currentChar) {
+        const containerHeight = textContainer.clientHeight;
+        const containerScrollTop = textContainer.scrollTop;
+        
+        // Get position of current character relative to container
+        const charOffsetTop = currentChar.offsetTop - textContainer.offsetTop;
+        
+        // Auto scroll if character is not visible
+        if (charOffsetTop > containerScrollTop + containerHeight - 50) {
+            textContainer.scrollTop = charOffsetTop - containerHeight / 2;
+        }
+  
+    }
     // Update current index
     currentCharIndex = typedWord.length;
 
