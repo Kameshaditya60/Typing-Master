@@ -74,10 +74,17 @@ typingInput.addEventListener("input", function (e) {
         }, 1000);
       }
 
-    // Reset all classes first
-    allChars.forEach(char => {
-        char.classList.remove('correct', 'incorrect', 'current');
-    });
+
+     // optimized code //reset all classes of spans(char in span)
+    if (currentCharIndex > 0) {
+      console.time()
+    allChars[currentCharIndex - 1].classList.remove('current');
+    console.timeEnd()
+}
+if (allChars[currentCharIndex]) {
+    allChars[currentCharIndex].classList.add('current');
+}
+
             let displayText = textDisplay.textContent;
 console.log('Display Text ', typeof (displayText));
 
